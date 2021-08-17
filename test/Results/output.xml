@@ -7,14 +7,7 @@
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://automationpractice.com/index.php</arg>
 <arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210816 20:38:36.654" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" starttime="20210816 20:38:36.654" endtime="20210816 20:38:45.922"/>
-</kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<arg>60</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210816 20:38:45.923" endtime="20210816 20:38:45.926"/>
+<doc>Opens a new browser923" endtime="20210816 20:38:45.926"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
