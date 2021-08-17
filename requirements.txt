@@ -1,0 +1,4 @@
+robotframework==4.1
+robotframework-seleniumlibrary==5.1.3
+robotframework-faker==5.0.0
+pyaml==21.8.3

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210816 20:38:36.210" rpa="false" schemaversion="2">
+<suite id="s1" name="Login" source="C:\Users\mbarbosa\robot\WebAutomationRobotFramework\test\features\login.robot">
+<test id="s1-t1" name="Cenario: Login com sucesso">
+<kw name="Dado que o cliente esteja na tela inicial da aplicação" library="home_kws">
+<kw name="Abrir sessão" library="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://automationpractice.com/index.php</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210816 20:38:36.654" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" starttime="20210816 20:38:36.654" endtime="20210816 20:38:45.922"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>60</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210816 20:38:45.923" endtime="20210816 20:38:45.926"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210816 20:38:45.927" endtime="20210816 20:38:46.457"/>
+</kw>
+<status status="PASS" starttime="20210816 20:38:36.653" endtime="20210816 20:38:46.459"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME.BOTAO_SIGNIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210816 20:38:46.459" endtime="20210816 20:38:46.558"/>
+</kw>
+<status status="PASS" starttime="20210816 20:38:36.653" endtime="20210816 20:38:46.558"/>
+</kw>
+<kw name="E acessar a tela de login" library="home_kws">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME.BOTAO_SIGNIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210816 20:38:46.561" endtime="20210816 20:38:46.604"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME.BOTAO_SIGNIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210816 20:38:46.605" level="INFO">Clicking element '//a[@class='login']'.</msg>
+<status status="PASS" starttime="20210816 20:38:46.605" endtime="20210816 20:38:49.728"/>
+</kw>
+<status status="PASS" starttime="20210816 20:38:46.560" endtime="20210816 20:38:49.729"/>
+</kw>
+<kw name="Quando realizar login com sucesso" library="login_kws">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN.INPUT_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210816 20:38:49.731" endtime="20210816 20:38:50.746"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN.INPUT_EMAIL}</arg>
+<arg>rasafa9934@ovooovo.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210816 20:38:50.748" level="INFO">Typing text 'rasafa9934@ovooovo.com' into text field '//input[@id='email']'.</msg>
+<status status="PASS" starttime="20210816 20:38:50.746" endtime="20210816 20:38:50.983"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN.INPUT_SENHA}</arg>
+<arg>Teste@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210816 20:38:50.985" level="INFO">Typing text 'Teste@123' into text field '//input[@id='passwd']'.</msg>
+<status status="PASS" starttime="20210816 20:38:50.983" endtime="20210816 20:38:51.263"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN.BOTAO_SIGNIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210816 20:38:51.266" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" starttime="20210816 20:38:51.263" endtime="20210816 20:38:54.044"/>
+</kw>
+<status status="PASS" starttime="20210816 20:38:49.729" endtime="20210816 20:38:54.045"/>
+</kw>
+<kw name="Então deve visualizar a tela My Account" library="minha_conta_kws">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MINHA_CONTA.TITULO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210816 20:38:54.046" endtime="20210816 20:38:54.111"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${TITULO_ATUAL}</var>
+<arg>${MINHA_CONTA.TITULO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210816 20:38:54.149" level="INFO">${TITULO_ATUAL} = MY ACCOUNT</msg>
+<status status="PASS" starttime="20210816 20:38:54.112" endtime="20210816 20:38:54.150"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${TITULO_ATUAL}</arg>
+<arg>MY ACCOUNT</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210816 20:38:54.150" endtime="20210816 20:38:54.150"/>
+</kw>
+<status status="PASS" starttime="20210816 20:38:54.045" endtime="20210816 20:38:54.150"/>
+</kw>
+<kw name="Encerrar sessão" library="setup">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210816 20:38:54.613" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210816 20:38:54.151" endtime="20210816 20:38:54.613"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210816 20:38:54.614" endtime="20210816 20:38:57.149"/>
+</kw>
+<status status="PASS" starttime="20210816 20:38:54.150" endtime="20210816 20:38:57.149"/>
+</kw>
+<status status="PASS" starttime="20210816 20:38:36.652" endtime="20210816 20:38:57.150"/>
+</test>
+<doc>Cenários de testes relacionado ao login da aplicação.</doc>
+<status status="PASS" starttime="20210816 20:38:36.214" endtime="20210816 20:38:57.150"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
