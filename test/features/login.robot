@@ -24,6 +24,6 @@ Cenario: Login com credenciais inválidas
     [Tags]      LOGIN     NEGATIVO
     Dado que o cliente esteja na tela inicial da aplicação
     E acessar a tela de login
-    Quando inserir os dados de login         dasdsad@sdsqaas.com         asesd@123
+    Quando inserir os dados de login         ${MASSA_DADOS.LOGIN_INVALIDO.EMAIL}      ${MASSA_DADOS.LOGIN_INVALIDO.SENHA}
     E clicar no elemento       ${LOGIN.BOTAO_SIGNIN}
     Então deve visualizar a mensagem      ${LOGIN.TEXTO_ERRO}     Authentication failed.
