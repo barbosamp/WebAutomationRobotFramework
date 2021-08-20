@@ -10,3 +10,6 @@ Cenario: Validar cadastro com sucesso
     Dado que o cliente esteja na tela inicial da aplicação
     E acessar a tela de login
     E acessar a tela de cadastro
+    E preencher o formulário com dados válidos
+    Quando clicar no elemento     ${CADASTRO.BOTAO_REGISTER}
+    Então deve visualizar a tela My Account
