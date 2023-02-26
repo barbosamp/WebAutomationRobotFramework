@@ -1,0 +1,28 @@
+*** Settings ***
+Documentation     Dependências do projeto
+
+#Dependencias
+Library        Browser
+Library        FakerLibrary       locale=pt_br
+Library        DebugLibrary
+
+# Keywords
+Resource       setup.robot
+Resource       ../auto/keywords/home_kws.robot
+Resource       ../auto/keywords/login_kws.robot
+Resource       ../auto/keywords/minha_conta_kws.robot
+Resource       ../auto/keywords/comum_kws.robot
+Resource       ../auto/keywords/cadastro_kws.robot
+
+#Elementos
+Resource      ../auto/elements/home_ets.resource
+Resource      ../auto/elements/login_ets.resource
+Resource      ../auto/elements/minha_conta_ets.resource
+Resource      ../auto/elements/cadastro_ets.resource
+
+# Dados
+Variables     ../auto/data/dados.yaml
+Variables     ../auto/data/mensagens.yaml
+
+# Configuração
+Variables     setup.yaml

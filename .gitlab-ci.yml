@@ -1,0 +1,12 @@
+image: marketsquare/robotframework-browser
+robot_test:
+  stage: test
+  script:
+    - pip install -r requirements.txt
+    - robot -x xunit.xml -d test/Reports test/features
+  artifacts:
+      when: always
+      paths:
+      - test/Reports
+      reports:
+        junit: test/Reports/xunit.xml

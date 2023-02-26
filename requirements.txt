@@ -1,0 +1,6 @@
+robotframework==6.0.2
+robotframework-browser==16.0.0
+robotframework-faker==5.0.0
+pyaml==21.8.3
+robotframework-debuglibrary==2.3.0
+robotframework-pabot

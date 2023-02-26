@@ -1,0 +1,4 @@
+CONFIG:
+  URL: https://www.automationtest.shop
+  NAVEGADOR: chromium #headlesschrome
+  TIMEOUT: 60
