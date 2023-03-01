@@ -1,7 +1,7 @@
 
-# Web Test Automation Example
+# Automação de testes Web
 
-This project is a example how to use robotframework for web automation tests.
+Este projeto é um exemplo de estrutura com robot framework para testes Web com paralelismo.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) 
 
@@ -25,122 +25,128 @@ This project is a example how to use robotframework for web automation tests.
 
 | Feature           | Tag          |
 | ---------------   | -------------|
-| Cadastro          | CADASTRO     |
+| Registro          | REGISTRO     |
 | Login             | LOGIN        |
 
 |                Description                 |     Tag         | 
 | ------------------------------------------ | --------------- |
-|   Execute all regressive tests     |   REGRESSIVO    |
-|   Execute all smoke tests.         |   SMOKE         |
-|   * Execute specific test by id.   |   ID-XX         |
+|   Executa todos os testes regressivos     |   REGRESSIVO    |
+|   Executa todos os smoke tests.         |   SMOKE         |
+|   * Executa um teste por id.   |   ID-XX         |
 
 
-##                  BEST PRACTICES USED					 
+##                  MELHORES PRÁTICAS					 
 * [Check Here!](https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst#test-suite-names)
 
 
-## Project Structure
+## Estrutura do Projeto
 ```
 
-    ├── src                                         # Here is present all the source code of automation.
-    │   ├── auto                                    # Test code execution.
-    │   │   ├── data                                # Test data, messages or data used in test run.
+    ├── src                                         # Representa todo o código relacionado a automação de testes.
+    │   ├── auto                                    # Código relacionado a execução dos testes.
+    │   │   ├── data                                # Massa de testes, dados ou mensagens utilizados durante execução dos testes.
     │   │   │    └── .yaml                          
-    │   │   ├── elements                            # Elements mapping, separetad by screens or feature of the application.
+    │   │   ├── elements                            # Mapeamento de elementos, separados por tela da aplicação.
     │   │   │    └── .resource
-    │   │   ├── keywords                            # Created keywords in this poject, separetad by feature.
+    │   │   ├── keywords                            # Keywords criadas no projeto separadas por features.
     │   │   │    └── .robot
     │   │   └── resources
-    │   │        └── libs                           # Libraries and external code, case necessary.
+    │   │        └── libs                           # Bibliotecas e implementações externas que poderão ser aplicadas e utilizadas no projeto.
     │   │             └── .py
-    │   └── config                                  # Configuration files.
-    │       ├── setup.yaml                          # Data file with the setup for the browser.
-    │       ├── package.resource                    # Robot Libraries and all files of the project.
-    │       └── setup.robot                         # Test setup and test teardown for the project.
-    ├── test                                        # Test scenarios and reports.
-    │   ├── features                                # Test scenarios separated by feature.
+    │   └── config                                  # Contém arquivos de configuração do projeto.
+    │       ├── setup.yaml                          # Arquivo de dados referente as configurações utilizadas no projeto: Browser, timeout, url...
+    │       ├── package.resource                    # Dependências e arquivos utilizados no projeto.
+    │       └── setup.robot                         # Keywords utilizadas para configurar o início e fim das execuções.
+    ├── test                                        # Cenários de teste e relatórios de execução.
+    │   ├── features                                # Cenários(Gherkin) de teste.
     │   │   └── .robot
-    │   └── Results                                 # Test evidence and reports after run.
+    │   └── Results                                 # Evidências e relatórios pós execução.
     │       ├── .mp4  
     │       ├── .jpg
     │       ├── .xml
     │       └── .html
-    ├── .gitignore                                  # Files and folders does not push to version control.
-    ├── requirements.txt                            # Dependency list and your versions.
-    ├── .gitlab-ci.yml                              # Pipeline file setup.
-    └── README.md                                   # Start instructions and important details of the project.
+    ├── .gitignore                                  # Arquivos e pastas que devem ser excluídas no upload para o repositório remoto.
+    ├── requirements.txt                            # Lista de dependências e suas respectivas versões.
+    ├── pipeline                                    # Configurações de execução através de pipeline no repositório remoto.
+    └── README.md                                   # Arquivo com orientações inicias do projeto e detalhes importantes.
 ```
-## Environment Setup
-- Download the [Python 3.11.2](https://www.python.org/downloads/) 
-#### PS: To avoid compatibility issues, uninstall the current version of python on your machine.
+
+## Configurando o ambiente:
+- Faça o donwload do [Python 3.11.2](https://www.python.org/downloads/) 
+#### PS: Para não ter problemas de compatibilidade,desinstale as versões do python da sua máquina.
+
+
+Para realizar a instalação do python na versão do projeto, acesse:
+
+- [Python](https://www.python.org/downloads/release/python-3104/)
 
 #
-- After instalation, check if the environment variables is correct configuration. For that, run the following command in your terminal and see the python version.
+- Após a instalação, verifique se as variáveis de ambiente foram configuradas corretamente. Para isso, basta executar o comando abaixo no terminal para visualizar a versão do python:
 ```
 python --version
 ```
-- The result should be similar that:
+- O resultado deve ser algo como:
 ```
 Python 3.11.2
 ```
-- Now, verify that pip, python package manager, has been successfully installed: 
+- Agora verifique se o pip, gerenciador de pacotes do Python, foi instalado corretamente:
 ```
 pip --version
 ```
-- The result should be similar that:
+- O resultado deve ser algo como:
 ```
 pip 22.0.4 from C:\Program Files\Python311\lib\site-packages\pip (python 3.11)
 ```
-- This project have a file for manage the dependencies and libraries that are in use.
-- Clone develop branch.
-- After clone this project in your preference folder, acccess the terminal inside main folder of the project and run the below command for download dependencies.
+- Nosso projeto possui um arquivo para gerenciar as dependências e bibliotecas que devem ser utilizadas.
+- Realize o clone do projeto, usando como base a branch: develop
+- Após realizar o clone em uma pasta de sua preferência, acesse o terminal dentro da pasta do projeto e execute o comando abaixo para realizar o download das dependências:
 
 ```
 pip install -r requirements.txt
 ```
-- Run below command for start setup that Browser Libary:
+- Execute o comando abaixo para iniciar a biblioteca Browser:
 ```
 rfbrowser init
 ```
 
 ##
-## Text Editor
-How to text editor, I suggest Visual Studio Code, but use your favorite.
-If choice Visual Studio Code, [Click Here](https://code.visualstudio.com/download) to go download and install.
-- For the best use, recommended the extensions:
+## Editor de texto
+Como editor de texto, a sugestão Visual Studio Code, porém você pode utilizar seu favorito.
+Caso opte pelo Visual Studio Code, [clique aqui](https://code.visualstudio.com/download) e realize o downlaod e instalação pelo link.
+- Para melhor utilização, recomenda-se a instalação das seguintes extensões:
 
-| Extensão                   | Função                                                       |
-| ---------------            | -------------------------------------------------------------|
-| Path Intellisense          | Auto complete folder path in your code.                      |
-| Material Icon Theme        | Change the icons of the project files.                                          |
-| Robot Code                 | Autocomplete the RobotFramework keywords.      |
+| Extensão                   | Função       |
+| ---------------            | -------------|
+| Path Intellisense          | Auxilia no autocomplete ao inserir caminhos de arquivos e pastas no código.                     |
+| Material Icon Theme        | Altera os ícones de arquivos de acordo com a extensão.                                          |
+| Robot Code                 | Auxilia no autocomplete realizado para bibliotecas e código do projeto com RobotFramework.      |
 
 ----
-## Test Execution
- Run tests with this command:
+## Executando os testes
+ Para realizar a execução dos testes, utilize o comando:
 ```
-robot -d test/Results test/features/file_name.robot
+robot -d test/Results test/features/nome_arquivo.robot
 ```
-Where: 
-- robot - the name that robotframework refers for start the execution. 
-- -d test/Results - Set the local where store the reports and evidence.
-- test/features/file_name.robot - Set the test file for execution.
+Onde: 
+- robot - é o nome que se refere ao robotframework para inicio das execuções.
+- -d test/Results - indica o local onde serão armazenados os relatórios e evidências.
+- test/features/nome_arquivo.robot - Indica o arquivo de testes que será utilizado.
 
- For parallel tests:
+ Para execução paralela dos testes, utilize o pabot:
 ```
 pabot -x xunit.xml -d test/Results test/features
 ```
- For include the tags:
+ Para realizar a execução dos testes utilizando as tags:
 ```
-robot -d test/Results -i TAG_NAME test/features
+robot -d test/Results -i NOME_TAG test/features
 ```
- For exclude a test by tag:
+ Para realizar a execução dos testes excluindo uma tag:
 ```
-robot -d test/Results -e TAG_NAME test/features
+robot -d test/Results -e NOME_TAG test/features
 ```
 
 
-## Author
+## Autores
 
 - mbarbosa (Marcos Barbosa)
 
