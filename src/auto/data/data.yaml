@@ -1,7 +1,7 @@
-MASSA_DADOS:
+DATA_SET:
   LOGIN:
     EMAIL: eloahnascimento@example.net
-    SENHA: (J6dk&Bncj
-  LOGIN_INVALIDO:
+    PASSWORD: (J6dk&Bncj
+  INVALID_LOGIN:
     EMAIL: dasdsad@sdsqaas.com
-    SENHA: asesd@123
+    PASSWORD: asesd@123

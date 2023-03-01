@@ -1,29 +1,29 @@
 *** Settings ***
-Documentation    Cenários de testes relacionado ao login da aplicação.
-# Dado -> Pré requisito/ estado atual
-# E -> Passo complementar
-# Quando -> Ação para um resultado esperado
-# E -> Passo complementar
-# Entao -> Resultado esperado
+Documentation    Test scenarios for the login feature.
+# Given -> Pre requesite / current state
+# And -> Complement Step
+# When -> Action for the expected result
+# And -> Complement Step
+# Then -> Expected Result
 
 Resource    ../../src/config/package.resource
 
-Test Setup    Abrir sessão
-Test Teardown   Encerrar sessão
+Test Setup    Open session
+Test Teardown   Close session
 
 *** Test Cases ***
-Cenario: Login com sucesso
+Scenario: Login with success
     [Tags]    LOGIN      POSITIVO     SMOKE
-    Dado que o cliente esteja na tela inicial da aplicação
-    E acessar a tela de login
-    Quando inserir os dados de login       ${MASSA_DADOS.LOGIN.EMAIL}     ${MASSA_DADOS.LOGIN.SENHA}
-    E clicar no elemento       ${LOGIN.BOTAO_SIGNIN}
-    Então deve visualizar a tela My Account
+    Given that the customer is on the app home screen
+    And access the login screen
+    When to enter login details       ${DATA_SET.LOGIN.EMAIL}     ${DATA_SET.LOGIN.PASSWORD}
+    And click on element       ${LOGIN.BUTTON_SIGNIN}
+    Then should see the My Account screen
 
-Cenario: Login com credenciais inválidas
-    [Tags]      LOGIN     NEGATIVO        REGRESSIVO
-    Dado que o cliente esteja na tela inicial da aplicação
-    E acessar a tela de login
-    Quando inserir os dados de login         ${MASSA_DADOS.LOGIN_INVALIDO.EMAIL}      ${MASSA_DADOS.LOGIN_INVALIDO.SENHA}
-    E clicar no elemento       ${LOGIN.BOTAO_SIGNIN}
-    Então deve visualizar a mensagem      ${LOGIN.TEXTO_ERRO}     ${MENSAGENS.LOGIN.AUTHENTICATION_FAILED}
+Scenario: Invalid login
+    [Tags]      LOGIN     NEGATIVO        REGRESSIVE
+    Given that the customer is on the app home screen
+    And access the login screen
+    When to enter login details         ${DATA_SET.INVALID_LOGIN.EMAIL}      ${DATA_SET.INVALID_LOGIN.PASSWORD}
+    And click on element       ${LOGIN.BUTTON_SIGNIN}
+    Then should see the message      ${LOGIN.ERROR_TEXT}     ${MESSAGES.LOGIN.AUTHENTICATION_FAILED}

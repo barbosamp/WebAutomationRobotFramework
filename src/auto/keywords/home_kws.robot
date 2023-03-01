@@ -1,11 +1,11 @@
 *** Settings ***
-Documentation        Keywords relacionadas a tela home.
+Documentation        Home screen keywords.
 
 Resource                  ../../config/package.resource
 
 *** Keywords ***
-Dado que o cliente esteja na tela inicial da aplicação
-    Wait For Elements State       ${HOME.BOTAO_SIGNIN}        visible
+Given that the customer is on the app home screen
+    Wait For Elements State       ${HOME.BUTTON_SIGNIN}        visible
 
-E acessar a tela de login
-    Click                       ${HOME.BOTAO_SIGNIN}
+And access the login screen
+    Click                       ${HOME.BUTTON_SIGNIN}

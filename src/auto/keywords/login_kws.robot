@@ -3,7 +3,7 @@
 Resource        ../../config/package.resource
 
 *** Keywords ***
-Quando inserir os dados de login
-    [Arguments]     ${EMAIL}    ${SENHA}
+When to enter login details
+    [Arguments]     ${EMAIL}    ${PASSWORD}
     Type Text      ${LOGIN.INPUT_EMAIL}           ${EMAIL}
-    Type Text      ${LOGIN.INPUT_SENHA}           ${SENHA}
+    Type Text      ${LOGIN.INPUT_PASSWORD}           ${PASSWORD}

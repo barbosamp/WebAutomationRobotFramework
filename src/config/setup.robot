@@ -1,15 +1,12 @@
 *** Settings ***
-Documentation    Configurações de inicialização e finalização dos testes.
+Documentation    Settings for start or end test execution
 
 *** Keywords ***
-Abrir sessão
-    # Abrir o navegador.
-    New Browser    ${CONFIG.NAVEGADOR}        headless=true
-    Set Browser Timeout    ${CONFIG.TIMEOUT}
-    New Page       ${CONFIG.URL}
-    # Maximizar o navegador
-    # Maximize Browser Window
+Open session
+    New Browser    ${SETUP.BROWSER}        headless=true
+    Set Browser Timeout    ${SETUP.TIMEOUT}
+    New Page       ${SETUP.URL}
 
-Encerrar sessão
+Close session
     Take Screenshot 
     Close Browser

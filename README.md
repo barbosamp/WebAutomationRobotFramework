@@ -25,12 +25,12 @@ This project is a example how to use robotframework for web automation tests.
 
 | Feature           | Tag          |
 | ---------------   | -------------|
-| Cadastro          | CADASTRO     |
+| Register          | REGISTER     |
 | Login             | LOGIN        |
 
 |                Description                 |     Tag         | 
 | ------------------------------------------ | --------------- |
-|   Execute all regressive tests     |   REGRESSIVO    |
+|   Execute all regressive tests     |   REGRESSIVE    |
 |   Execute all smoke tests.         |   SMOKE         |
 |   * Execute specific test by id.   |   ID-XX         |
 
@@ -109,7 +109,7 @@ How to text editor, I suggest Visual Studio Code, but use your favorite.
 If choice Visual Studio Code, [Click Here](https://code.visualstudio.com/download) to go download and install.
 - For the best use, recommended the extensions:
 
-| Extensão                   | Função                                                       |
+| Extension                  | Function                                                       |
 | ---------------            | -------------------------------------------------------------|
 | Path Intellisense          | Auto complete folder path in your code.                      |
 | Material Icon Theme        | Change the icons of the project files.                                          |

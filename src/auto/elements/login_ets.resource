@@ -1,8 +1,8 @@
 *** Variables ***
 &{LOGIN}
 ...     INPUT_EMAIL=//input[@id='email']
-...     INPUT_SENHA=//input[@id='passwd']
-...     BOTAO_SIGNIN=//button[@id='SubmitLogin']
-...     TEXTO_ERRO=//div[@class='alert alert-danger']/child::ol/child::li
-...     INPUT_EMAIL_CADASTRO=//input[@id='email_create']
-...     BOTAO_CREATE=//button[@id='SubmitCreate']
+...     INPUT_PASSWORD=//input[@id='passwd']
+...     BUTTON_SIGNIN=//button[@id='SubmitLogin']
+...     ERROR_TEXT=//div[@class='alert alert-danger']/child::ol/child::li
+...     INPUT_EMAIL_REGISTER=//input[@id='email_create']
+...     BUTTON_CREATE=//button[@id='SubmitCreate']
