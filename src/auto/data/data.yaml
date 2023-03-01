@@ -1,0 +1,7 @@
+DATA_SET:
+  LOGIN:
+    EMAIL: eloahnascimento@example.net
+    PASSWORD: (J6dk&Bncj
+  INVALID_LOGIN:
+    EMAIL: dasdsad@sdsqaas.com
+    PASSWORD: asesd@123

@@ -1,0 +1,3 @@
+MESSAGES:
+  LOGIN:
+    AUTHENTICATION_FAILED: Authentication failed.
