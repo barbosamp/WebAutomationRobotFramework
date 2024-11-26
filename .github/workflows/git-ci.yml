@@ -28,11 +28,12 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5.0.0
         with:
-         python-version: 3.12.2
+         python-version: 3.12.5
          
       - name: Setup Workspace
         run: |
           pip install --upgrade pip
+          python3 -m pip install --upgrade setuptools
           pip install -r requirements.txt
 
       - name: Run Tests
