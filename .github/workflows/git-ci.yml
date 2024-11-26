@@ -32,12 +32,11 @@ jobs:
          
       - name: Setup Workspace
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Tests
-        run: $GITHUB_WORKSPACE/.venv/bin/python3.12 -m robot.run --outputdir $GITHUB_WORKSPACE/test/Results $GITHUB_WORKSPACE/test/features
+        run: python -m robot.run --outputdir test/Results -x junit-report.xml test/features
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v4.3.1
