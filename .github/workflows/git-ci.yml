@@ -35,6 +35,9 @@ jobs:
           pip install --upgrade pip
           python3 -m pip install --upgrade setuptools
           pip install -r requirements.txt
+          npx playwright install-deps       
+          rfbrowser init
+          
       - name: Run Tests
         run: python -m robot.run --outputdir test/Results -x junit-report.xml test/features
 
