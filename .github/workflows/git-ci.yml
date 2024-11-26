@@ -34,7 +34,7 @@ jobs:
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          pip install -r requiriments.txt
+          pip install -r requirements.txt
 
       - name: Run Tests
         run: $GITHUB_WORKSPACE/.venv/bin/python3.12 -m robot.run --outputdir $GITHUB_WORKSPACE/test/Results $GITHUB_WORKSPACE/test/features
